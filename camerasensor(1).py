@@ -32,3 +32,19 @@ for fname in images:
         cv.imshow('img', img)
         cv.waitKey(500)
 cv.destroyAllWindows()
+
+# Calibration #
+ret, mtx, dist, rvecs, tvecs = cv.calibrateCamera(objpoints, imgpoints, gray.shape[::-1], None, None)
+
+# Undistortion #
+img = cv.imread(images[0])
+h, w = img.shape[:2]
+newcameramtx, roi = cv.getOptimalNewCameraMatrix(mtx, dist(w,h), 1, (w,h))
+
+# cv.undistort
+dst = cv.undistort(img, mtx, dist, None, newcameramtx)
+
+# crop the image
+x, y, w, h = roi
+dst = dst[y:y+h. x:x+w]
+cv.imwrite('calibresult.png', dst)
