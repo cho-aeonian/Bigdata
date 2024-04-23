@@ -1,5 +1,6 @@
 import cv2 as cv
 import numpy as np
+from matplotlib import pyplot as plt
 
 # 그림 파일 불러오기
 img =  cv.imread('puppy.jpg', cv.IMREAD_GRAYSCALE)
