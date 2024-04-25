@@ -24,3 +24,26 @@ ress.append(cv2.subtract(img3, img4))
 ress.append(cv2.absdiff(img3, img4))
 ress.append(cv2.bitwise_not(img5))
 ress.append(cv2.bitwise_not(img5, mask))
+
+# 결과 영상 출력
+titles = []
+titles.append('input1')
+titles.append('input2')
+titles.append('input3')
+titles.append('input4')
+titles.append('input5')
+titles.append('mask')
+
+titles.append('add')
+titles.append('addWeighted')
+titles.append('subtract')
+titles.append('absdiff')
+titles.append('bitwise_not')
+titles.append('bitwise_and')
+images = [img1, img2, img3, img4, img5, mask, ress[0], ress[1], ress[2], ress[3], ress[4], ress[5]]
+
+for i in range(12):
+    plt.subplot(2,6,i+1), plt.imshow(images[i])
+    plt.title(titles[i])
+    plt.xticks([]), plt.yticks([])
+plt.show()
