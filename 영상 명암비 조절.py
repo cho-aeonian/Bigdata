@@ -21,3 +21,15 @@ thres1 = 5; thres2 = 100
 max_v_log = 255 / np.log(1+255)
 max_v_invol = 255 / np.power(255,gamma1)
 max_v_sel = 100 / np.power(thres2, gamma2)
+
+for i in range(256):
+    val = i * multi_v
+
+    if val > 255 : val = 255
+    multi_lut[i] = val
+    log_lut[i] = np.round(max_v_log * np.log(1+i))
+    invol_lut[i] = np.round(max_v_invol * np.power(i, gamma1))
+
+    if i < thres1 : sel_lut[i] = i
+    elif i > thres2 : sel_lut[i] = i
+    else: sel_lut[i] = np.round(max_v_sel * np.power(i, gamma2))
