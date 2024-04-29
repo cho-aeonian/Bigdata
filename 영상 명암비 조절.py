@@ -33,3 +33,11 @@ for i in range(256):
     if i < thres1 : sel_lut[i] = i
     elif i > thres2 : sel_lut[i] = i
     else: sel_lut[i] = np.round(max_v_sel * np.power(i, gamma2))
+
+# 명암비 조절 (LUT 적용)
+ress = []
+ress.append(img1)
+ress.append(cv2.LUT(img1, multi_lut))
+ress.append(cv2.LUT(img1, log_lut))
+ress.append(cv2.LUT(img1, invol_lut))
+ress.append(cv2.LUT(img1, sel_lut))
