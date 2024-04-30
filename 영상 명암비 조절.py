@@ -41,3 +41,6 @@ ress.append(cv2.LUT(img1, multi_lut))
 ress.append(cv2.LUT(img1, log_lut))
 ress.append(cv2.LUT(img1, invol_lut))
 ress.append(cv2.LUT(img1, sel_lut))
+
+# 결과 영상 출력
+titles = ['입력영상','상수곱','로그 변환','거듭제곱 변환','구간 변환']
