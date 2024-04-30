@@ -3,7 +3,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 # 영상 읽기
-img1 = cv2.imread("./../images/img5.jpg",cv2.IMREAD_GRAYSCALE)
+img1 = cv2.imread("C:\img5\img5.jpg",cv2.IMREAD_GRAYSCALE)
 
 if img1 is None:
     print('no file found')
@@ -44,3 +44,11 @@ ress.append(cv2.LUT(img1, sel_lut))
 
 # 결과 영상 출력
 titles = ['입력영상','상수곱','로그 변환','거듭제곱 변환','구간 변환']
+
+plt.rc('font', family='Nanum Gothic')
+for i in range(5):
+    plt.subplot(2,3,i+1)
+    plt.imshow(ress[i], cmap='gray')
+    plt.title(titles[i])
+    plt.xticks([]),plt.yticks([])
+plt.show()
