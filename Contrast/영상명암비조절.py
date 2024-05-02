@@ -10,7 +10,7 @@ if img1 is None:
     exit()
 
 # 영상 명암비 조절 변수 선언 및 초기화
-multi_lut = np.full(shape=[256], fill_value=0, dtype=np.uint8)
+multi_lut = np.full(shape=[256]  , fill_value=0, dtype=np.uint8)
 log_lut = np.full(shape=[256], fill_value=0, dtype=np.uint8)
 invol_lut = np.full(shape=[256], fill_value=0, dtype=np.uint8)
 sel_lut = np.full(shape=[256], fill_value=0, dtype=np.uint8)
