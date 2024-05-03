@@ -10,3 +10,12 @@ res1 = cv2.equalizeHist(img1)
 ch1 = [0]; ranges1 = [0,256]; histSize1 = [256]
 hist1 = cv2.calcHist([img1], ch1, None, histSize1, ranges1)
 hist2 = cv2.calcHist([res1], ch1, None, histSize1, ranges1)
+
+# 상수곱, 로그곱, 거듭제곱 반환 기반 명암비 조절 및 히스토그램 계산
+multi_lut = np.full(shape=[256], fill_value=0, dtype=np.uint8)
+log_lut = np.full(shape=[256], fill_value=0, dtype=np.uint8)
+invol1_lut = np.full(shape=[256], fill_value=0, dtype=np.uint8)
+multi_v = 2; gamma1 = 0.4
+thres1 = 5; thres2 = 100
+max_v_log = 255 / np.log(1+255)
+max_v_invol1 = 255 / np.power(255, gamma1)
