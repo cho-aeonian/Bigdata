@@ -19,3 +19,10 @@ multi_v = 2; gamma1 = 0.4
 thres1 = 5; thres2 = 100
 max_v_log = 255 / np.log(1+255)
 max_v_invol1 = 255 / np.power(255, gamma1)
+
+for i in range(256):
+    val = i * multi_v
+    if val > 255 : val = 255
+    multi_lut[i] = val
+    log_lut[i] = np.round(max_v_log * np.log(1+i))
+    invol1_lut[i] = np.round(max_v_invol1 * np.power(i, gamma1))
