@@ -26,3 +26,12 @@ for i in range(256):
     multi_lut[i] = val
     log_lut[i] = np.round(max_v_log * np.log(1+i))
     invol1_lut[i] = np.round(max_v_invol1 * np.power(i, gamma1))
+
+# 명암비 조절
+res2 = cv2.LUT(img1, multi_lut)
+res3 = cv2.LUT(img1, log_lut)
+res4 = cv2.LUT(img1, invol1_lut)
+
+hist3 = cv2.calcHist([res2], ch1, None, histSize1, ranges1)
+hist4 = cv2.calcHist([res3], ch1, None, histSize1, ranges1)
+hist5 = cv2.calcHist([res4], ch1, None, histSize1, ranges1)
