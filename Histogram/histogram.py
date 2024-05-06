@@ -48,3 +48,10 @@ ress.append(res3)
 ress.append(res4)
 
 titles = ["Input Histogram", "Equaliation-conver Histogram", "Multiply-convert Histogram", "log-convert Histogram", "Invil-convert Histgram"]
+
+for i in range(5):
+    plt.subplot(2,3,i+1)
+    plt.imshow(ress[i], cmap='gray')
+    plt.title(titles[i])
+    plt.xticks([]), plt.yticks([])
+plt.show()
