@@ -55,3 +55,9 @@ for i in range(5):
     plt.title(titles[i])
     plt.xticks([]), plt.yticks([])
 plt.show()
+
+display_hist = [("Input Histogram", hist1),
+                ("Equalization-convert Histogram", hist2)
+                ("Multiply-convert Histogram", hist3)
+                ("log-convert Histogram", hist4)
+                ("Invil-convert Histogram", hist5)]
