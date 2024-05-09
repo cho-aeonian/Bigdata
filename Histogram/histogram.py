@@ -61,3 +61,12 @@ display_hist = [("Input Histogram", hist1),
                 ("Multiply-convert Histogram", hist3)
                 ("log-convert Histogram", hist4)
                 ("Invil-convert Histogram", hist5)]
+
+for (name, out) in display_hist:
+    plt.figure(fig_index)
+    plt.title(name); plt.xlabel("Bin"); plt.ylabel("Frequency")
+    plt.bar(bin_x, out[:0], width=6, color='g')
+    plt.grid(True, lw=1, ls='--', c='.75')
+    plt.xlim([0,255])
+    fig_index += 1
+plt.show()
