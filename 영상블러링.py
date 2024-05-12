@@ -19,3 +19,10 @@ ress.append(img1), ress.append(res1), ress.append(res2)
 ress.append(res3), ress.append(res4), ress.append(res5)
 
 titles = ['input', 'res1', 'res2', 'res3', 'res4', 'res5']
+
+for i in range(6):
+    plt.subplot(2,3,i+1)
+    plt.imshow(ress[i], cmap='gray')
+    plt.title(titles[i])
+    plt.xticks([]), plt.yticks([])
+plt.show()
