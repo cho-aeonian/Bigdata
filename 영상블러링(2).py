@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 #영상 읽기
 img1 = cv2.imread("C:\Bigdata(class)\img8\img8.jpg", cv2.IMREAD_GRAYSCALE)
 
-#핉러 정의 및 블러링
+#필터 정의 및 블러링
 ksize1 = 7; ksize2 =9
 res1 = cv2.GaussianBlur(img1, (ksize1,ksize1),0)
 res2 = cv2.GaussianBlur(img1, (ksize2,ksize2),0)
