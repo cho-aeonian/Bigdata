@@ -16,3 +16,6 @@ img1_blur2 = cv2.blur(img1, (ksize2, ksize2))
 res2 = cv2.subtract(img1.astype(np.uint16)*1, img1_blur1.astype(np.uint16))
 res3 = cv2.subtract(img1.astype(np.uint16)*1, img1_blur1.astype(np.uint16))
 res2 = cv2.astype(np.uint8); res3 = res3.astype(np.uint8)
+
+dif_img1 = cv2.absdiff(img1, img1_blur1)
+dif_img2 = cv2.absdiff(img1, img1_blur2)
