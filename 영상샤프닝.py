@@ -19,3 +19,8 @@ res2 = cv2.astype(np.uint8); res3 = res3.astype(np.uint8)
 
 dif_img1 = cv2.absdiff(img1, img1_blur1)
 dif_img2 = cv2.absdiff(img1, img1_blur2)
+
+ress = []
+ress.append(img1), ress.append(res1),
+ress.append(res2), ress.append(res3),
+ress.append(dif_img1), ress.append(dif_img2)
