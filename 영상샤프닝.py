@@ -24,3 +24,7 @@ ress = []
 ress.append(img1), ress.append(res1),
 ress.append(res2), ress.append(res3),
 ress.append(dif_img1), ress.append(dif_img2)
+
+titles = ['input', '3*3 filter','unsharp(3*3 blur)',
+          'unsharp(15*15 blur)', 'absDiff(3*3 blur)',
+          'adsDiff(15*15 blur)']
