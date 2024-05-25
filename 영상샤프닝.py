@@ -32,3 +32,5 @@ titles = ['input', '3*3 filter','unsharp(3*3 blur)',
 for i in range(6):
     plt.subplot(2,3,i+1)
     plt.imshow(ress[i], cmap='gray')
+    plt.title(titles[i])
+    plt.xticks([]), plt.yticks([])
