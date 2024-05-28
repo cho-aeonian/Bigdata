@@ -5,3 +5,13 @@ from matplotlib import pyplot as plt
 
 #영상 읽기
 img1 = cv2.imread("C:\Bigdata(class)\move_conversion\img11.jpg", cv2.IMREAD_GRAYSCALE)
+
+#이동 변환
+h, w, = img1.shape
+tlans_x = 10; tlans_y = 25
+point1_src = np.float32([[15,20], [50,70],[130,140]])
+point1_dst = np.float32(point1_src+[tlans_x, tlans_y])
+affine_mat1 = cv2.getAffineTransform(point1_src, point1_dst)
+user_mat1 = np.float32([[1,0,tlans_x],[0,1,tlans_y]])
+res1 = cv2.warpAffine(img1, affine_mat1, (w,h))
+res2 = cv2.warpAffine(img1, user_mat1, (w,h))
