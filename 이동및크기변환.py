@@ -24,3 +24,7 @@ res4 = cv2.resize(img1,(0,0),None, scale_x, scale_y)
 background=np.full(shape=[h,w], fill_value=0, dtype=np.uint8)
 background[:round(h*scale_y), :round(w*scale_x)] = res4;
 res4 = background
+
+#이동 및 크기 변환
+user_mat3 = np.float32([[0.4, 0, 100], [0,0.6,50]])
+res5 = cv2.warpAffine(img1, user_mat3, (w,h))
