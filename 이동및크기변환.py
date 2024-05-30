@@ -15,3 +15,12 @@ affine_mat1 = cv2.getAffineTransform(point1_src, point1_dst)
 user_mat1 = np.float32([[1,0,tlans_x],[0,1,tlans_y]])
 res1 = cv2.warpAffine(img1, affine_mat1, (w,h))
 res2 = cv2.warpAffine(img1, user_mat1, (w,h))
+
+#크기 변환
+scale_x = 0.8; scale_y=0.6
+user_mat2 = np.float32([[scale_x,0,0],[0,scale_y,0]])
+res3 = cv2.warpAffine(img1, user_mat2, (w,h))
+res4 = cv2.resize(img1,(0,0),None, scale_x, scale_y)
+background=np.full(shape=[h,w], fill_value=0, dtype=np.uint8)
+background[:round(h*scale_y), :round(w*scale_x)] = res4;
+res4 = background
