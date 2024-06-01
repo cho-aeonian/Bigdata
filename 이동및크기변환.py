@@ -28,3 +28,9 @@ res4 = background
 #이동 및 크기 변환
 user_mat3 = np.float32([[0.4, 0, 100], [0,0.6,50]])
 res5 = cv2.warpAffine(img1, user_mat3, (w,h))
+
+#결과 영상 출력
+ress = []
+ress.append(img1), ress.append(res1), ress.append(res2)
+ress.append(res3), ress.append(res4), ress.append(res5)
+titles = ['input','res1','res2','res3','res4','res5']
