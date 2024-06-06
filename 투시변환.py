@@ -14,3 +14,6 @@ per_mat1 = cv2.getPerspectiveTransform(point1_src,point1_dst)
 per_mat2 = cv2.getPerspectiveTransform(point2_src,point2_dst)
 res1 = cv2.warpPerspective(img1, per_mat1, (w,h))
 res2 = cv2.warpPerspective(img1, per_mat2, (w,h))
+
+ress = [];
+ress.append(img1),ress.append(res1), ress.append(res2)
