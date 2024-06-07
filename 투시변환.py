@@ -17,3 +17,8 @@ res2 = cv2.warpPerspective(img1, per_mat2, (w,h))
 
 ress = [];
 ress.append(img1),ress.append(res1), ress.append(res2)
+
+for i in range(3):
+    plt.subplot(2,2,i+1)
+    plt.imshow(ress[i],cmap='gray')
+    plt.xticks([]), plt.yticks([])
