@@ -22,3 +22,5 @@ for i in range(3):
     plt.subplot(2,2,i+1)
     plt.imshow(ress[i],cmap='gray')
     plt.xticks([]), plt.yticks([])
+
+plt.show()
