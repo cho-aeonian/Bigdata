@@ -20,3 +20,7 @@ def draw_rect(event, x, y, flags, param):
             # Draw a small circle to indicate the points clicked
             cv2.circle(img_with_points, (x, y), 5, (255, 0, 0), -1)
             cv2.imshow('image', img_with_points)
+
+# Create a window and set a mouse callback function
+cv2.namedWindow('image')
+cv2.setMouseCallback('image', draw_rect)
