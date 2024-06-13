@@ -34,3 +34,11 @@ while True:
         break
 
 cv2.destroyAllWindows()
+
+# Ensure we have 4 points
+if len(points) == 4:
+    # Convert the points to numpy array
+    src_points = np.array(points, dtype="float32")
+
+    # Find the bounding box for the clicked points
+    rect = cv2.boundingRect(src_points)
