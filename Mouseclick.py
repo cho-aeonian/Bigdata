@@ -42,3 +42,15 @@ if len(points) == 4:
 
     # Find the bounding box for the clicked points
     rect = cv2.boundingRect(src_points)
+
+ # Extract the region of interest using the bounding box
+    x, y, w, h = rect
+    roi = img1[y:y+h, x:x+w]
+
+    # Display the original image with points and the extracted region
+    plt.figure(figsize=(10, 5))
+    plt.subplot(121), plt.imshow(img_with_points, cmap='gray'), plt.title('Input with Points')
+    plt.subplot(122), plt.imshow(roi, cmap='gray'), plt.title('Extracted Region')
+    plt.show()
+else:
+    print("Four points were not selected.")
