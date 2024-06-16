@@ -8,3 +8,15 @@ img1 = cv2.resize(img1, (320, 240))
 
 # Create a copy of the image to draw points on
 img_with_points = img1.copy()
+
+# Initialize an empty list to store the points
+points = []
+
+def draw_rect(event, x, y, flags, param):
+    global points, img_with_points
+    if event == cv2.EVENT_LBUTTONDOWN:
+        if len(points) < 4:
+            points.append((x, y))
+            # Draw a small circle to indicate the points clicked
+            cv2.circle(img_with_points, (x, y), 5, (255, 0, 0), -1)
+            cv2.imshow('image', img_with_points)
