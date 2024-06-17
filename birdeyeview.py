@@ -24,3 +24,13 @@ def draw_rect(event, x, y, flags, param):
 # Create a window and set a mouse callback function
 cv2.namedWindow('image')
 cv2.setMouseCallback('image', draw_rect)
+
+# Display the image and wait for 4 points to be clicked
+while True:
+    cv2.imshow('image', img_with_points)
+    if len(points) == 4:
+        break
+    if cv2.waitKey(1) & 0xFF == 27:  # Press 'ESC' to exit
+        break
+
+cv2.destroyAllWindows()
