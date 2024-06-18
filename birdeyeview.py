@@ -25,12 +25,13 @@ def draw_rect(event, x, y, flags, param):
 cv2.namedWindow('image')
 cv2.setMouseCallback('image', draw_rect)
 
-# Display the image and wait for 4 points to be clicked
-while True:
-    cv2.imshow('image', img_with_points)
-    if len(points) == 4:
-        break
-    if cv2.waitKey(1) & 0xFF == 27:  # Press 'ESC' to exit
-        break
-
-cv2.destroyAllWindows()
+# Ensure we have 4 points
+if len(points) == 4:
+    # Define the points in the destination image
+    width, height = 320, 240
+    dst_points = np.array([
+        [0, height], 
+        [0, 0], 
+        [width, 0], 
+        [width, height]
+    ], dtype="float32")
