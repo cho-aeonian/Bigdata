@@ -35,3 +35,9 @@ if len(points) == 4:
         [width, 0], 
         [width, height]
     ], dtype="float32")
+
+    # Convert the points to numpy array
+    src_points = np.array(points, dtype="float32")
+    
+    # Compute the perspective transform matrix
+    M = cv2.getPerspectiveTransform(src_points, dst_points)
