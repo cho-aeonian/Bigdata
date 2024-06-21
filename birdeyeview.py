@@ -41,3 +41,6 @@ if len(points) == 4:
     
     # Compute the perspective transform matrix
     M = cv2.getPerspectiveTransform(src_points, dst_points)
+
+    # Apply the perspective transformation to the image
+    warped = cv2.warpPerspective(img1, M, (width, height))
