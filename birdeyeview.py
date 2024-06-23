@@ -50,3 +50,6 @@ if len(points) == 4:
     plt.subplot(121), plt.imshow(cv2.cvtColor(img_with_points, cv2.COLOR_BGR2RGB), cmap='gray'), plt.title('Input with Points')
     plt.subplot(122), plt.imshow(warped, cmap='gray'), plt.title('Bird\'s Eye View')
     plt.show()
+
+else:
+    print("Four points were not selected.")
