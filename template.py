@@ -17,3 +17,8 @@ for meth in methods:
 
     if method in [cv2.TM_SQDIFF, cv2.TM_SQDIFF_NORMED]:
         top_left = min_loc
+    
+    else:
+        top_left = max_loc
+    bottom_right = (top_left[0]+w,top_left[1]+h)
+    cv2.rectangle(input, top_left, bottom_right, 0, 2)
