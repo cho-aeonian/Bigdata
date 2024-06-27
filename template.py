@@ -14,3 +14,6 @@ for meth in methods:
     method = eval(meth)
     res = cv2.matchTemplate(img1,template,method)
     min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
+
+    if method in [cv2.TM_SQDIFF, cv2.TM_SQDIFF_NORMED]:
+        top_left = min_loc
