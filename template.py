@@ -22,3 +22,7 @@ for meth in methods:
         top_left = max_loc
     bottom_right = (top_left[0]+w,top_left[1]+h)
     cv2.rectangle(input, top_left, bottom_right, 0, 2)
+
+    plt.figure()
+    plt.subplot(121), plt.imshow(res,cmap='gray')
+    plt.title('Matching Result'),plt.xticks([]), plt.yticks([])
