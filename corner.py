@@ -9,3 +9,7 @@ dst = cv2.cornerHarris(img1,2,3,0.06)
 dst = cv2.dilate(dst,None)
 res1 = cv2.cvtColor(img1,cv2.COLOR_GRAY2BGR)
 res1[dst>0.1*dst.max()] = [0,0,255]
+
+displays = [("input1",img1),("res1",res1)]
+for (name, out) in displays:
+    cv2.imshow(name, out)
