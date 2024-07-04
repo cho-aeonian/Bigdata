@@ -13,3 +13,6 @@ res1[dst>0.1*dst.max()] = [0,0,255]
 displays = [("input1",img1),("res1",res1)]
 for (name, out) in displays:
     cv2.imshow(name, out)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
