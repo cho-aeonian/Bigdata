@@ -9,3 +9,10 @@ def check_odd(num):
     if num % 2 == 0:
         num += 1
     return num
+
+def set_run(pos):
+    global img1
+    method = cv2.getTrackbarPos('method',"morphology")
+    itr = cv2.getTrackbarPos('iter',"morphology")
+    ksize = cv2.getTrackbarPos('ksize', "morphology")
+    run = cv2.getTrackbarPos('run',"morphology")
