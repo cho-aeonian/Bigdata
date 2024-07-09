@@ -24,7 +24,17 @@ def set_run(pos):
         else:
             res = cv2.dilate(img1, kernel, iterations=itr)
         cv2.imshow("morphology",res)
-        
+
 img1 = cv2.imread("C:\Bigdata(class)\trackbar\img1.jpg", cv2.IMREAD_GRAYSCALE)
 
 img_index = 1
+
+cv2.namedWindow('morphology')
+cv2.createTrackbar('method', 'morphology',0,1,nothing)
+cv2.createTrackbar('ksize', 'morphology',3,10,nothing)
+cv2.createTrackbar('iter', 'morphology',1,10,nothing)
+cv2.createTrackbar('run', 'morphology',0,1,set_run)
+cv2.createTrackbar('method', 'morphology',0)
+cv2.createTrackbar('ksize', 'morphology',3)
+cv2.createTrackbar('iter', 'morphology',1)
+cv2.createTrackbar('run', 'morphology',0)
