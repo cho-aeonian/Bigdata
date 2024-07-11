@@ -24,3 +24,7 @@ def set_run(pos):
         else:
             res = cv2.dilate(img1, kernel, iterations=itr)
         cv2.imshow("morphology",res)
+        
+img1 = cv2.imread("C:\Bigdata(class)\trackbar\img1.jpg", cv2.IMREAD_GRAYSCALE)
+
+img_index = 1
