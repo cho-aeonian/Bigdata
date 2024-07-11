@@ -38,3 +38,7 @@ cv2.createTrackbar('method', 'morphology',0)
 cv2.createTrackbar('ksize', 'morphology',3)
 cv2.createTrackbar('iter', 'morphology',1)
 cv2.createTrackbar('run', 'morphology',0)
+
+cv2.imshow("morphology", img1)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
