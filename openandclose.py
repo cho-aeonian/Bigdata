@@ -15,3 +15,7 @@ for method in methods:
     res = cv2.morphologyEx(img1,method, cv2.UMat(), iterations=1)
 
     ress.append(res)
+for i in range(6):
+    cv2.imshow("Test", ress[i])
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
