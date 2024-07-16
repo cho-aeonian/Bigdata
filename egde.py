@@ -3,3 +3,7 @@ import cv2
 from matplotlib import pyplot as plt
 
 img1 = cv2.imread("C:\Bigdata(class)\edge\img16.jpg", cv2.IMREAD_GRAYSCALE)
+
+res = []
+img1_blur = cv2.GaussianBlur(img1, (3,3),0)
+res1 = cv2.Sobel(img1, cv2.FILTER_SCHARR, 1, 0, ksize=3)
