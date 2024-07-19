@@ -15,3 +15,11 @@ res4 = cv2.Canny(img1, 50, 200, apertureSize=5, L2gradient=True)
 res.append(img1_blur), res.append(res1), res.append(res2), res.append(res3), res.append(res4)
 
 titles = ["input","soble(dx=1)","sobel(dy=1)","Laplactian","Canny"]
+
+for i in range(5):
+    plt.subplot(2,3,i+1)
+    plt.imshow(res[i],cmap='gray')
+    plt.title([titles[i]])
+    plt.xticks([]), plt.yticks([])
+
+plt.show()
