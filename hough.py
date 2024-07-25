@@ -11,3 +11,5 @@ img2 = cv2.resize(img2_src, (320,240))
 img1_edge = cv2.Canny(img1, 50, 150, apertureSize=3)
 lines = cv2.HoughLines(img1_edge, 2, np.pi/180,100)
 linesP = cv2.HoughLines(img1_edge, 2, np.pi/180, 50, minLineLength=1, maxLineGap=100)
+
+circles = cv2.HoughCircles(img2, cv2.HOUGH_GRADIENT, 1, 20, parma1=50, param2=20,minRadius=30,maxRadius=50)
