@@ -15,3 +15,11 @@ linesP = cv2.HoughLines(img1_edge, 2, np.pi/180, 50, minLineLength=1, maxLineGap
 circles = cv2.HoughCircles(img2, cv2.HOUGH_GRADIENT, 1, 20, parma1=50, param2=20,minRadius=30,maxRadius=50)
 
 img1_color1 = cv2.cvtColor(img1, cv2.COLOR_GRAY2BGR)
+if lines.any() != None:
+    for line in lines:
+        rho, theta = line[0]
+        a = np.cos(theta); b=np.sin(theta)
+        x0 = a*rho; y0 = b*rho
+        x1 = int(x0 + 1000*(-b)); y1 = int(y0 + 1000*a)
+        x2 = int(x0 - 1000*(-b)); y2 = int(y0 - 1000*a)
+        cv2.line(img1_color1, (x1,y1),(x2,y2),(0,0,255),2)
